@@ -1,0 +1,17 @@
+<div>
+  <h1>Edit Category</h1>
+</div>
+<div class="row">
+  <div class="col">
+    <form>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" class="form-control" name="category" [value]="cats.catname[id].name" #category>
+      </div>
+      <button class="btn btn-warning mr-2" (click)="onClearClick()" type="reset">Clear</button>
+      <button class="btn btn-primary " (click)="onSubmitOfEdit(category)">Submit</button>
+      <button class="btn btn-danger ml-2" (click)="onCancleOfEdit()">Cancel</button>
+    </form>
+  </div>
+</div>

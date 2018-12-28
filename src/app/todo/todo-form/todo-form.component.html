@@ -1,0 +1,29 @@
+<div>
+  <h1>New Todo</h1>
+</div>
+<div class="row">
+  <div class="col">
+    <form #formCtrl="ngForm" ngNativeValidate>
+      <div class="form-group">
+        <label for="task">Task</label><label class="text-danger ml-1">*</label>
+        <input type="text" class="form-control" id="task"  name="name" [(ngModel)]="name" ngControl="passwordCtrl" required>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label><label class="text-danger ml-1">*</label>
+        <select class="hideLabel form-control" name="category" [(ngModel)]="category" ngControl="passwordCtrl" required>
+          <option selected="" value="">--Select Category--</option>
+          <option *ngFor="let cn of cname">
+            {{cn.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="status" [(ngModel)]="status">
+        <label class="form-check-label" for="status">Completed</label>
+      </div>
+      <button class="btn btn-warning mr-3" type="button" (click)="onClearClick()">Clear</button>
+      <button class="btn btn-primary mr-3" type="button" (click)="onSubmitClicked()" [disabled]="!formCtrl.form.valid">Submit</button>
+      <button class="btn btn-danger " type="button" (click)="onCancleOfForm()">Cancel</button>
+    </form>
+  </div>
+</div>
